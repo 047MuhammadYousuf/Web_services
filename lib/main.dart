@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18.0,
+                          fontSize: MediaQuery.of(context).size.width*0.045,
                           fontWeight: FontWeight.bold,
                       ),
                     )

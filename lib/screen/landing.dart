@@ -12,8 +12,10 @@ class landing extends StatefulWidget {
 class _landingState extends State<landing> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
+    return Scaffold(
+      backgroundColor:Color.fromARGB(255, 121, 253, 189),
+      body: ListView
+           (
         padding: EdgeInsets.only(
             top: MediaQuery.of(context).size.width * 0.50,
             left: MediaQuery.of(context).size.width * 0.03,
@@ -34,6 +36,7 @@ class _landingState extends State<landing> {
               ),
             ],
           )),
+          SizedBox(height:MediaQuery.of(context).size.height * 0.07,),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(
