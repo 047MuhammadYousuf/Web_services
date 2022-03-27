@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/login.dart';
+import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home.dart';
 
 class landing extends StatefulWidget {
@@ -57,7 +58,9 @@ class _landingState extends State<landing> {
             height: MediaQuery.of(context).size.height * 0.07,
           ),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue,
                 shape: new RoundedRectangleBorder(

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/landing.dart';
+import 'package:web_services/screen/lostmobile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -90,7 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.width*0.045,
+                          fontSize: MediaQuery.of(context).size.width*0.045
+                          ,
                           fontWeight: FontWeight.bold,
                       ),
                     )
