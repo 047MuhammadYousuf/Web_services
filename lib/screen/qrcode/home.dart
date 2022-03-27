@@ -16,8 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 134, 188, 231),
         resizeToAvoidBottomInset: false,
-        appBar: appbar("Home Screen"),
+        appBar: appbar("Home Screen",
+        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,6 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
               width: double.infinity,
             ),
             ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 130, 180, 73),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(25.0),
+                    )),
                 onPressed: () {
                   setState(() {
                     Navigator.push(
@@ -34,13 +41,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context) => QrCodeGenerator()));
                   });
                 },
-                child: const Text("QR code generator")),
+                child:  Text("QR code generator",
+                style: TextStyle(fontSize:  MediaQuery.of(context).size.width * 0.05),
+                )
+                ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height*0.10,
+            ),
             ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.redAccent,
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(25.0),
+                    )),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => QrScanner()));
                 },
-                child: const Text("QR code Scanner")),
+                child:  Text("QR code Scanner",
+                style: TextStyle(fontSize:  MediaQuery.of(context).size.width * 0.05),
+                )),
           ],
         ),
       ),
