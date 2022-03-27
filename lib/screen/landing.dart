@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_services/screen/login.dart';
 import 'package:web_services/screen/qrcode/home.dart';
 
 class landing extends StatefulWidget {
@@ -37,7 +38,7 @@ class _landingState extends State<landing> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  MaterialPageRoute(builder: (context) => const Login()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -69,7 +70,12 @@ class _landingState extends State<landing> {
             height: MediaQuery.of(context).size.height * 0.07,
           ),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.red,
                 shape: new RoundedRectangleBorder(
