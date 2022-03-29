@@ -1,10 +1,8 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,17 +12,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late FToast fToast;
-  @override
-  void initState() {
-    super.initState();
-    fToast = FToast();
-    fToast.init(context);
-  }
-  _showDefaultToast() {
-    Fluttertoast.showToast(
-        msg: "This is Default Toast...", toastLength: Toast.LENGTH_LONG);
-  }
+  // late FToast fToast;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   fToast = FToast();
+  //   fToast.init(context);
+  // }
+  // _showDefaultToast() {
+  //   Fluttertoast.showToast(
+  //       msg: "This is Default Toast...", toastLength: Toast.LENGTH_LONG);
+  // }
  
   @override
 

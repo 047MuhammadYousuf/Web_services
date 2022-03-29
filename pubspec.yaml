@@ -28,8 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
-    sdk: flutter
-  fluttertoast: ^8.0.7    
+    sdk: flutter   
 
 
 
