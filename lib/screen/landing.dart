@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/login.dart';
 import 'package:web_services/screen/lostmobile.dart';
-import 'package:web_services/screen/qrcode/home.dart';
+import 'package:web_services/screen/qrcode/home_qr.dart';
 
 class landing extends StatefulWidget {
   const landing({Key? key}) : super(key: key);

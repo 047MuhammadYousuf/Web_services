@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
 import 'package:web_services/screen/custom_widgets.dart';
-import 'package:web_services/screen/qrcode/home.dart';
+import 'package:web_services/screen/home..dart';
+import 'package:web_services/screen/qrcode/home_qr.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -134,7 +135,7 @@ class _LoginState extends State<Login> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomeScreen()));
+                                    builder: (context) => Home()));
                           },
                           child: Text(
                             "Login",

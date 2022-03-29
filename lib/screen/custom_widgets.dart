@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
-import 'package:web_services/screen/qrcode/home.dart';
+import 'package:web_services/screen/qrcode/home_qr.dart';
 
 Widget buildText(String text, bool checked) => Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
