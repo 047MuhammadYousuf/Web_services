@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
+import 'package:web_services/screen/lostmobile.dart';
+import 'package:web_services/screen/qrcode/home_qr.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -60,7 +62,9 @@ class Home extends StatelessWidget {
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height*0.15,
+                child: Text("System Status"),
               ),
+
               Container(
                 height:  MediaQuery.of(context).size.height*0.30,
                 width: MediaQuery.of(context).size.width*0.30,
@@ -88,7 +92,9 @@ class Home extends StatelessWidget {
                     Expanded(child: 
                     Container(
                            margin: EdgeInsets.all(3),
-                      child: ElevatedButton(onPressed: (){}, 
+                      child: ElevatedButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
+                      }, 
                       child:Text('Setting'), 
                       ),
                     )
@@ -96,7 +102,9 @@ class Home extends StatelessWidget {
                      Expanded(child: 
                     Container(
                            margin: EdgeInsets.all(3),
-                      child: ElevatedButton(onPressed: (){}, 
+                      child: ElevatedButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>QRHomeScreen()));
+                      }, 
                       child:Text('Add  Member'), 
                       ),
                     )
