@@ -1,10 +1,6 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
-
-import 'widgets.dart';
 
 class QRHomeScreen extends StatefulWidget {
   const QRHomeScreen({Key? key}) : super(key: key);
