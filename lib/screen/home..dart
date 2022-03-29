@@ -1,7 +1,10 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,20 +14,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-   var fToast;
+  late FToast fToast;
   @override
   void initState() {
     super.initState();
-    fToast = fToast();
+    fToast = FToast();
     fToast.init(context);
   }
-    _showCustomToast() async {
-    fToast.showToast(
-      child: Text('This is Toast'),
-      // gravity: ToastGravity.BOTTOM,
-      toastDuration: const Duration(seconds: 2),
-    );
+  _showDefaultToast() {
+    Fluttertoast.showToast(
+        msg: "This is Default Toast...", toastLength: Toast.LENGTH_LONG);
   }
+ 
   @override
 
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
                         child: ElevatedButton(
                             onPressed: () {
                           
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>_showCustomToast()));
+                      // Navigator.push(context,MaterialPageRoute(builder: (context)=>_showDefaultToast()));
                               
                             },
                             style: ElevatedButton.styleFrom(
