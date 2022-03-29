@@ -16,7 +16,7 @@ class _HomeScreenState extends State<QRHomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 134, 188, 231),
+        backgroundColor: Colors.green,
         resizeToAvoidBottomInset: false,
         appBar: appbar("QR Screen",
         ),

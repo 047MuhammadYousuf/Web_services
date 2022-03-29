@@ -62,9 +62,16 @@ class Home extends StatelessWidget {
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height*0.15,
-                child: Text("System Status"),
+                
               ),
-
+                Container(
+                  padding: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.30),
+                child: Text("System Status",
+                style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),
+                
+                ), 
+                
+                ) ,
               Container(
                 height:  MediaQuery.of(context).size.height*0.30,
                 width: MediaQuery.of(context).size.width*0.30,
