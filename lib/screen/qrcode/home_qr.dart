@@ -4,14 +4,14 @@ import 'package:web_services/screen/qrcode/qr_scan.dart';
 
 import 'widgets.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class QRHomeScreen extends StatefulWidget {
+  const QRHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<QRHomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<QRHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

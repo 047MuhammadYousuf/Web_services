@@ -45,7 +45,7 @@ Widget authenticateButton(context) {
           if (isAuthenticated) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()),
+              MaterialPageRoute(builder: (context) => const QRHomeScreen()),
             );
           }
         }),
