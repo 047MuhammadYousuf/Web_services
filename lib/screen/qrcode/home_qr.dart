@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 134, 188, 231),
         resizeToAvoidBottomInset: false,
-        appBar: appbar("Home Screen",
+        appBar: appbar("QR Screen",
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,

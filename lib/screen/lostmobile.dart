@@ -12,7 +12,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Reset'),),
+      appBar: AppBar(title: Text('Recovery'),),
         resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 164, 223, 166),
       body: Center(
@@ -36,9 +36,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.025),
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  "Reset it",
+                  "Recovery Password",
                   style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.width * 0.1,
+                      fontSize: MediaQuery.of(context).size.width * 0.05,
                       fontWeight: FontWeight.bold),
                 ),
               ),
