@@ -3,10 +3,30 @@ import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+   var fToast;
+  @override
+  void initState() {
+    super.initState();
+    fToast = fToast();
+    fToast.init(context);
+  }
+    _showCustomToast() async {
+    fToast.showToast(
+      child: Text('This is Toast'),
+      // gravity: ToastGravity.BOTTOM,
+      toastDuration: const Duration(seconds: 2),
+    );
+  }
+  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
@@ -51,7 +71,11 @@ class Home extends StatelessWidget {
                           child: Container(
                         margin: EdgeInsets.all(3),
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                          
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>_showCustomToast()));
+                              
+                            },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red,
                             ),
@@ -93,6 +117,7 @@ class Home extends StatelessWidget {
                 height: MediaQuery.of(context).size.height*0.15,
               ),
               Container(
+                  padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
                 child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
