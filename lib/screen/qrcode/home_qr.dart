@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
@@ -16,9 +18,9 @@ class _HomeScreenState extends State<QRHomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromARGB(255, 117, 209, 120),
         resizeToAvoidBottomInset: false,
-        appBar: appbar("QR Screen",
+        appBar: AppBar(title: Text('QR Screen'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,

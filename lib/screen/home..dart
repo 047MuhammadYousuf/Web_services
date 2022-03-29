@@ -126,9 +126,13 @@ class _HomeState extends State<Home> {
                     Container(
                            margin: EdgeInsets.all(3),
                       child: ElevatedButton(onPressed: (){
+
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
-                      }, 
-                      child:Text('Setting'), 
+                      },
+                      style: ElevatedButton.styleFrom(
+                              primary: Colors.blue,
+                            ), 
+                      child:Text('Setting',textAlign: TextAlign.center,), 
                       ),
                     )
                     ),
@@ -138,7 +142,10 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>QRHomeScreen()));
                       }, 
-                      child:Text('Add  Member'), 
+                      style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                            ),
+                      child:Text('Add  Member',textAlign: TextAlign.center,), 
                       ),
                     )
                     ),
@@ -148,7 +155,10 @@ class _HomeState extends State<Home> {
                       child: ElevatedButton(onPressed: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
                       }, 
-                      child:Text('Logout'), 
+                      style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 63, 211, 211),
+                            ),
+                      child:Text('Logout',textAlign: TextAlign.center,), 
                       ),
                     )
                     ),
