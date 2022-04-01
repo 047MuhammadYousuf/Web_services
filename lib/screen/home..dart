@@ -14,27 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // late String color;
-
-  // late FToast fToast;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   fToast = FToast();
-  //   fToast.init(context);
-  // }
-  // _showDefaultToast() {
-  //   Fluttertoast.showToast(
-  //       msg: "This is Default Toast...", toastLength: Toast.LENGTH_LONG);
-  // }
-  // List colors = [Colors.red, Colors.green, Colors.yellow];
-  // Random random = new Random();
-
-  // int index = 0;
-
-  // void changeIndex() {
-  //   setState(() => index = random.nextInt(3));
-  // }
+ 
 
   @override
 
@@ -64,7 +44,7 @@ class _HomeState extends State<Home> {
                             style: ElevatedButton.styleFrom(
                               primary: Color(0xff44D258),
                             ),
-                            child: Text("Green",
+                            child: Text("Status",
                                 style: TextStyle(
                                     fontSize: 10,      color: Colors.black))),
                       )),
