@@ -132,10 +132,11 @@ class _LoginState extends State<Login> {
                                       0.06) // put the width and height you want
                               ),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
+                              _navigateToNextScreen(context);
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => Home()));
                           },
                           child: Text(
                             "Login",
@@ -184,3 +185,6 @@ class _LoginState extends State<Login> {
         ),
       );
 }
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
+  }

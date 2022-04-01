@@ -33,7 +33,7 @@ class MyHomePage  extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   void initState () {
     super.initState();
-    Timer(Duration(seconds: 5),  () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+    Timer(Duration(seconds: 3),  () => Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => landing())));
   }
   @override

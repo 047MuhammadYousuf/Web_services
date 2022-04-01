@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
@@ -12,6 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // late String color;
+
   // late FToast fToast;
   // @override
   // void initState() {
@@ -23,7 +27,15 @@ class _HomeState extends State<Home> {
   //   Fluttertoast.showToast(
   //       msg: "This is Default Toast...", toastLength: Toast.LENGTH_LONG);
   // }
- 
+  // List colors = [Colors.red, Colors.green, Colors.yellow];
+  // Random random = new Random();
+
+  // int index = 0;
+
+  // void changeIndex() {
+  //   setState(() => index = random.nextInt(3));
+  // }
+
   @override
 
   Widget build(BuildContext context) {
@@ -45,42 +57,45 @@ class _HomeState extends State<Home> {
                           child: Container(
                         margin: EdgeInsets.all(3),
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () =>{},
+                              
+                              
+                          
                             style: ElevatedButton.styleFrom(
                               primary: Color(0xff44D258),
                             ),
                             child: Text("Green",
                                 style: TextStyle(
-                                    fontSize: 10, color: Colors.black))),
+                                    fontSize: 10,      color: Colors.black))),
                       )),
-                      Expanded(
-                          child: Container(
-                        margin: EdgeInsets.all(3),
-                        child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
-                            ),
-                            child: Text(
-                              "Red",
-                              style: TextStyle(fontSize: 10),
-                            )),
-                      )),
-                      Expanded(
-                          child: Container(
-                        margin: EdgeInsets.all(3),
-                        child: ElevatedButton(
-                            onPressed: () {
+                      // Expanded(
+                      //     child: Container(
+                      //   margin: EdgeInsets.all(3),
+                      //   child: ElevatedButton(
+                      //       onPressed: () {},
+                      //       style: ElevatedButton.styleFrom(
+                      //         primary: Colors.blue,
+                      //       ),
+                      //       child: Text(
+                      //         "Red",
+                      //         style: TextStyle(fontSize: 10),
+                      //       )),
+                      // )),
+                      // Expanded(
+                      //     child: Container(
+                      //   margin: EdgeInsets.all(3),
+                      //   child: ElevatedButton(
+                      //       onPressed: () {
                           
-                      // Navigator.push(context,MaterialPageRoute(builder: (context)=>_showDefaultToast()));
+                      // // Navigator.push(context,MaterialPageRoute(builder: (context)=>_showDefaultToast()));
                               
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.red,
-                            ),
-                            child:
-                                Text("Toast", style: TextStyle(fontSize: 10))),
-                      )),
+                      //       },
+                      //       style: ElevatedButton.styleFrom(
+                      //         primary: Colors.red,
+                      //       ),
+                      //       child:
+                      //           Text("Toast", style: TextStyle(fontSize: 10))),
+                      // )),
                     ]),
               ),
               SizedBox(
