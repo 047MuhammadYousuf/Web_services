@@ -48,7 +48,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      labelText: 'Enter Email',
+                      labelText: 'Enter Recovery Password',
                     )),
               ),
               ElevatedButton(
