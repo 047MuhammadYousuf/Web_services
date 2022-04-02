@@ -5,6 +5,9 @@ import 'package:web_services/screen/custom_widgets.dart';
 import 'package:web_services/screen/home..dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 
+TextEditingController username = TextEditingController();
+TextEditingController password = TextEditingController();
+
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -15,8 +18,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   late bool isAvailable;
   late bool hasFingerprint;
-  TextEditingController username = TextEditingController();
-  TextEditingController password = TextEditingController();
+
   bool _showPassword = false;
   checkAvablity() async {
     isAvailable = await LocalAuthApi.hasBiometrics();
@@ -91,6 +93,7 @@ class _LoginState extends State<Login> {
                       Container(
                         padding: EdgeInsets.all(10),
                         child: TextField(
+                            controller: username,
                             cursorColor: Colors.green,
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -100,6 +103,7 @@ class _LoginState extends State<Login> {
                       Container(
                         padding: EdgeInsets.all(10),
                         child: TextField(
+                            controller: password,
                             cursorColor: Colors.green,
                             obscureText: !this._showPassword,
                             decoration: InputDecoration(
@@ -132,7 +136,7 @@ class _LoginState extends State<Login> {
                                       0.06) // put the width and height you want
                               ),
                           onPressed: () {
-                              _navigateToNextScreen(context);
+                            _navigateToNextScreen(context);
                             // Navigator.push(
                             //     context,
                             //     MaterialPageRoute(
@@ -185,6 +189,62 @@ class _LoginState extends State<Login> {
         ),
       );
 }
-  void _navigateToNextScreen(BuildContext context) {
+
+_navigateToNextScreen(BuildContext context) {
+  if (username.text == "admin@gmail.com" && password.text == "admin") {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
+    username.clear();
+    password.clear();
+  } else if (username != "admin@gmail.com" && password == "admin") {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Invalid Email Credentials"),
+            content: Text("Please enter valid credentials"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  } else if (username == "admin@gmail.com" && password != "admin") {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Invalid Password Credentials"),
+            content: Text("Please enter valid credentials"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  } else {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Invalid  Credentials"),
+            content: Text("Please enter valid credentials"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
   }
+}
