@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
+import 'package:web_services/screen/home..dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 
 Widget buildText(String text, bool checked) => Container(
@@ -45,7 +46,7 @@ Widget authenticateButton(context) {
           if (isAuthenticated) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const QRHomeScreen()),
+              MaterialPageRoute(builder: (context) => const Home()),
             );
           }
         }),

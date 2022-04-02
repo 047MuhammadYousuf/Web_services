@@ -3,7 +3,6 @@ import 'package:local_auth/local_auth.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
 import 'package:web_services/screen/custom_widgets.dart';
 import 'package:web_services/screen/home..dart';
-import 'package:web_services/screen/qrcode/home_qr.dart';
 
 TextEditingController username = TextEditingController();
 TextEditingController password = TextEditingController();
