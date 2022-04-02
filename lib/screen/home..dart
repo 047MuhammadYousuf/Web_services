@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
       });
     } else if (number == 2) {
       setState(() {
-        status = Color.fromARGB(255, 132, 43, 248);
+        status = Color.fromARGB(255, 1, 59, 250);
       });
     } else {
       setState(() {
