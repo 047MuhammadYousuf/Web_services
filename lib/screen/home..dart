@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
+import 'package:web_services/screen/qrcode/qr_create.dart';
+import 'package:web_services/screen/qrcode/qr_scan.dart';
 
 // import 'package:fluttertoast/fluttertoast.dart';
 Color status = Color(0xff44D258);
@@ -136,7 +138,7 @@ class _HomeState extends State<Home> {
                       offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
-                  color: Colors.white,
+                  color: status,
                   borderRadius: BorderRadius.all(
                     Radius.circular(35),
                   ),
@@ -177,7 +179,7 @@ class _HomeState extends State<Home> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => QRHomeScreen()));
+                                  builder: (context) => QrScanner()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.green,
