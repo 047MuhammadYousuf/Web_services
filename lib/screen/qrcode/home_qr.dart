@@ -42,7 +42,7 @@ class _HomeScreenState extends State<QRHomeScreen> {
                   });
                 },
                 child: Text(
-                     "Scan to Join",
+                     "Qr Code Generate",
                   style: TextStyle(
                       fontSize: MediaQuery.of(context).size.width * 0.05),
                 )),

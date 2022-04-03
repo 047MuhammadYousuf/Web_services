@@ -10,7 +10,7 @@ class QrCodeGenerator extends StatefulWidget {
 
 class _QrCodeGeneratorState extends State<QrCodeGenerator> {
   TextEditingController datacontroller = TextEditingController();
-  String data = "webservice";
+  String data = "456456";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
