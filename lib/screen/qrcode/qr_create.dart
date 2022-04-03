@@ -11,7 +11,7 @@ class QrCodeGenerator extends StatefulWidget {
 
 class _QrCodeGeneratorState extends State<QrCodeGenerator> {
   TextEditingController datacontroller = TextEditingController();
-  String data = "webservice";
+  String data = "webservice\n Yousuf";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +41,6 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-         
           QrImage(
             data: data,
             size: 250,

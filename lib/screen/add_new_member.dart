@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-class Addmember extends StatelessWidget {
-   Addmember({ Key? key }) : super(key: key);
+
+class Addnewmember extends StatefulWidget {
+  final String? text;
+  Addnewmember({Key? key, @required this.text}) : super(key: key);
 
   @override
+  State<Addnewmember> createState() => _Addnewmember();
+}
 
+class _Addnewmember extends State<Addnewmember> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        children: [
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Name',
-            ),
-          )
-        ],
-      ),
+    return Scaffold( 
+      body: Text("${widget.text}"),
     );
   }
 }
