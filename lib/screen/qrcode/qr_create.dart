@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:web_services/screen/add_new_member.dart';
 
 class QrCodeGenerator extends StatefulWidget {
   const QrCodeGenerator({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class QrCodeGenerator extends StatefulWidget {
 
 class _QrCodeGeneratorState extends State<QrCodeGenerator> {
   TextEditingController datacontroller = TextEditingController();
-  String data = "webservice";
+  String data = "webservice\n Yousuf";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
         title: const Text(
-          "Scan to join",
+          "Scan to Join ",
           style: TextStyle(
             color: Colors.black,
             fontSize: 22,
