@@ -7,7 +7,9 @@ import 'package:local_auth/local_auth.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
 import 'package:web_services/screen/custom_widgets.dart';
 import 'package:web_services/screen/home..dart';
-import 'package:web_services/screen/qrcode/home_qr.dart';
+
+TextEditingController username = TextEditingController();
+TextEditingController password = TextEditingController();
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -19,8 +21,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   late bool isAvailable;
   late bool hasFingerprint;
-  TextEditingController username = TextEditingController();
-  TextEditingController password = TextEditingController();
+
   bool _showPassword = false;
   checkAvablity() async {
     isAvailable = await LocalAuthApi.hasBiometrics();
@@ -105,6 +106,7 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
                       Container(
                         padding: EdgeInsets.all(10),
                         child: TextField(
+                            controller: username,
                             cursorColor: Colors.green,
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -114,6 +116,7 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
                       Container(
                         padding: EdgeInsets.all(10),
                         child: TextField(
+                            controller: password,
                             cursorColor: Colors.green,
                             obscureText: !this._showPassword,
                             decoration: InputDecoration(
@@ -145,12 +148,22 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
                                   MediaQuery.of(context).size.height *
                                       0.06) // put the width and height you want
                               ),
+<<<<<<< HEAD
                           onPressed: () =>changeIndex(context),
                           //   Navigator.push(
                           //       context,
                           //       MaterialPageRoute(
                           //           builder: (context) => Home()));
                           // },
+=======
+                          onPressed: () {
+                            _navigateToNextScreen(context);
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => Home()));
+                          },
+>>>>>>> 65838d99caff7a4f78f0c32e7b674cc55f9bba9f
                           child: Text(
                             "Login",
                             style: TextStyle(
@@ -198,3 +211,65 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
         ),
       );
 }
+<<<<<<< HEAD
+=======
+
+_navigateToNextScreen(BuildContext context) {
+  if (username.text == "admin@gmail.com" && password.text == "admin") {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
+    username.clear();
+    password.clear();
+  } else if (username != "admin@gmail.com" && password == "admin") {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Invalid Email Credentials"),
+            content: Text("Please enter valid credentials"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  } else if (username == "admin@gmail.com" && password != "admin") {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Invalid Password Credentials"),
+            content: Text("Please enter valid credentials"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  } else {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Invalid  Credentials"),
+            content: Text("Please enter valid credentials"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  }
+}
+>>>>>>> 65838d99caff7a4f78f0c32e7b674cc55f9bba9f

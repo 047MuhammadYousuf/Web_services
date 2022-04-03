@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:web_services/screen/login.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
+import 'package:web_services/screen/qrcode/qr_create.dart';
 
 class landing extends StatefulWidget {
   const landing({Key? key}) : super(key: key);
@@ -14,9 +15,8 @@ class _landingState extends State<landing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Color.fromARGB(255, 121, 253, 189),
-      body: ListView
-           (
+      backgroundColor: Color.fromARGB(255, 121, 253, 189),
+      body: ListView(
         padding: EdgeInsets.only(
             top: MediaQuery.of(context).size.width * 0.50,
             left: MediaQuery.of(context).size.width * 0.03,
@@ -37,7 +37,9 @@ class _landingState extends State<landing> {
               ),
             ],
           )),
-          SizedBox(height:MediaQuery.of(context).size.height * 0.07,),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.07,
+          ),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -59,7 +61,8 @@ class _landingState extends State<landing> {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ForgetPassword()));
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue,
@@ -79,7 +82,8 @@ class _landingState extends State<landing> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const QRHomeScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const QrCodeGenerator()),
                 );
               },
               style: ElevatedButton.styleFrom(

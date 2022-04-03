@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:web_services/screen/qrcode/details.dart';
 
 class QrScanner extends StatefulWidget {
   const QrScanner({Key? key}) : super(key: key);
@@ -74,6 +75,10 @@ class _QrScannerState extends State<QrScanner> {
     controller.scannedDataStream.listen((barcode) {
       setState(() {
         this.barcode = barcode;
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Details(text: "${barcode}")));
       });
     });
   }

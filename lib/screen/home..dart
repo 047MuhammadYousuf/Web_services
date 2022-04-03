@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
+import 'package:web_services/screen/qrcode/qr_create.dart';
+import 'package:web_services/screen/qrcode/qr_scan.dart';
+
 // import 'package:fluttertoast/fluttertoast.dart';
+Color status = Color(0xff44D258);
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,34 +18,38 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // late String color;
-
-  // late FToast fToast;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   fToast = FToast();
-  //   fToast.init(context);
-  // }
-  // _showDefaultToast() {
-  //   Fluttertoast.showToast(
-  //       msg: "This is Default Toast...", toastLength: Toast.LENGTH_LONG);
-  // }
-  // List colors = [Colors.red, Colors.green, Colors.yellow];
-  // Random random = new Random();
-
-  // int index = 0;
-
-  // void changeIndex() {
-  //   setState(() => index = random.nextInt(3));
-  // }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Random objectname = Random();
+    int number = objectname.nextInt(3);
+    print(number);
+    if (number == 0) {
+      setState(() {
+        status = Color(0xff44D258);
+      });
+    } else if (number == 1) {
+      setState(() {
+        status = Color.fromARGB(255, 210, 68, 68);
+      });
+    } else if (number == 2) {
+      setState(() {
+        status = Color.fromARGB(255, 1, 59, 250);
+      });
+    } else {
+      setState(() {
+        status = Color.fromARGB(255, 255, 0, 200);
+      });
+    }
+  }
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
         appBar: AppBar(
+          backgroundColor: Color(0xFF009C10),
           title: Text('Home Screen'),
         ),
         body: Container(
@@ -57,16 +65,13 @@ class _HomeState extends State<Home> {
                           child: Container(
                         margin: EdgeInsets.all(3),
                         child: ElevatedButton(
-                            onPressed: () =>{},
-                              
-                              
-                          
+                            onPressed: () => {},
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xff44D258),
+                              primary: status,
                             ),
-                            child: Text("Green",
+                            child: Text("Status",
                                 style: TextStyle(
-                                    fontSize: 10,      color: Colors.black))),
+                                    fontSize: 10, color: Colors.white))),
                       )),
                       // Expanded(
                       //     child: Container(
@@ -86,9 +91,9 @@ class _HomeState extends State<Home> {
                       //   margin: EdgeInsets.all(3),
                       //   child: ElevatedButton(
                       //       onPressed: () {
-                          
+
                       // // Navigator.push(context,MaterialPageRoute(builder: (context)=>_showDefaultToast()));
-                              
+
                       //       },
                       //       style: ElevatedButton.styleFrom(
                       //         primary: Colors.red,
@@ -99,89 +104,114 @@ class _HomeState extends State<Home> {
                     ]),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height*0.15,
-                
+                height: MediaQuery.of(context).size.height * 0.15,
               ),
-                Container(
-                  padding: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.30),
-                child: Text("System Status",
-                style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),
-                
-                ), 
-                
-                ) ,
               Container(
-                height:  MediaQuery.of(context).size.height*0.30,
-                width: MediaQuery.of(context).size.width*0.30,
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.30,
+                  bottom: MediaQuery.of(context).size.height * 0.0120,
+                ),
+                child: Text(
+                  "System Status",
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width * 0.05,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.30,
+                width: MediaQuery.of(context).size.width * 0.30,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 221, 225, 230),
                   image: const DecorationImage(
-                    image: NetworkImage(
-                        ''),
+                    image: NetworkImage(''),
                     fit: BoxFit.cover,
                   ),
                   border: Border.all(
                     color: Colors.black,
                     width: 8,
                   ),
-                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      spreadRadius: 8,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                  color: status,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(35),
+                  ),
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height*0.15,
+                height: MediaQuery.of(context).size.height * 0.15,
               ),
               Container(
-                  padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+                padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(child: 
-                    Container(
-                           margin: EdgeInsets.all(3),
-                      child: ElevatedButton(onPressed: (){
-
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
-                            ), 
-                      child:Text('Setting',textAlign: TextAlign.center,), 
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.all(3),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForgetPassword()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                        ),
+                        child: Text(
+                          'Setting',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    )
-                    ),
-                     Expanded(child: 
-                    Container(
-                           margin: EdgeInsets.all(3),
-                      child: ElevatedButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>QRHomeScreen()));
-                      }, 
-                      style: ElevatedButton.styleFrom(
-                              primary: Colors.green,
-                            ),
-                      child:Text('Add  Member',textAlign: TextAlign.center,), 
+                    )),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.all(3),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => QrScanner()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.green,
+                        ),
+                        child: Text(
+                          'Add  Member',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    )
-                    ),
-                     Expanded(child: 
-                    Container(
-                           margin: EdgeInsets.all(3),
-                      child: ElevatedButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
-                      }, 
-                      style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 63, 211, 211),
-                            ),
-                      child:Text('Logout',textAlign: TextAlign.center,), 
+                    )),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.all(3),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyHomePage()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 63, 211, 211),
+                        ),
+                        child: Text(
+                          'Logout',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    )
-                    ),
-                    
+                    )),
                   ],
                 ),
               )
-
-            ])
-            )
-            );
+            ])));
   }
 }

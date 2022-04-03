@@ -16,7 +16,9 @@ class _HomeScreenState extends State<QRHomeScreen> {
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 117, 209, 120),
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(title: Text('QR Screen'),
+        appBar: AppBar(
+          title: Text('QR Screen'),
+          backgroundColor: Color(0xFF009C10),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,12 +41,13 @@ class _HomeScreenState extends State<QRHomeScreen> {
                             builder: (context) => QrCodeGenerator()));
                   });
                 },
-                child:  Text("QR code generator",
-                style: TextStyle(fontSize:  MediaQuery.of(context).size.width * 0.05),
-                )
-                ),
+                child: Text(
+                  "QR code generator",
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width * 0.05),
+                )),
             SizedBox(
-              height: MediaQuery.of(context).size.height*0.10,
+              height: MediaQuery.of(context).size.height * 0.10,
             ),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -56,8 +59,10 @@ class _HomeScreenState extends State<QRHomeScreen> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => QrScanner()));
                 },
-                child:  Text("QR code Scanner",
-                style: TextStyle(fontSize:  MediaQuery.of(context).size.width * 0.05),
+                child: Text(
+                  "QR code Scanner",
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width * 0.05),
                 )),
           ],
         ),
