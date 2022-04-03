@@ -41,20 +41,12 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          InkWell(
-            onTap: (){
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>Addmember()));
-            },
-            child: QrImage(data: data,
+         
+          QrImage(
+            data: data,
             size: 250,
             backgroundColor: Colors.white,
-            ),
           ),
-          // QrImage(
-          //   data: data,
-          //   size: 250,
-          //   backgroundColor: Colors.white,
-          // ),
           SizedBox(
             height: 20,
             width: MediaQuery.of(context).size.width,
