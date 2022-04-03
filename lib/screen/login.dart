@@ -1,3 +1,7 @@
+// ignore_for_file: unnecessary_new
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
@@ -32,6 +36,16 @@ class _LoginState extends State<Login> {
         buildText('Fingerprint', hasFingerprint),
       ],
     );
+  }
+
+List colors = [Colors.red, Colors.green, Colors.yellow];
+  Random random = new Random();
+
+  int index = 0;
+
+  void changeIndex(BuildContext context) {
+    setState(() => index = random.nextInt(3));
+    Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
   }
 
   @override
@@ -131,13 +145,12 @@ class _LoginState extends State<Login> {
                                   MediaQuery.of(context).size.height *
                                       0.06) // put the width and height you want
                               ),
-                          onPressed: () {
-                              _navigateToNextScreen(context);
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => Home()));
-                          },
+                          onPressed: () =>changeIndex(context),
+                          //   Navigator.push(
+                          //       context,
+                          //       MaterialPageRoute(
+                          //           builder: (context) => Home()));
+                          // },
                           child: Text(
                             "Login",
                             style: TextStyle(
@@ -185,6 +198,3 @@ class _LoginState extends State<Login> {
         ),
       );
 }
-  void _navigateToNextScreen(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
-  }
