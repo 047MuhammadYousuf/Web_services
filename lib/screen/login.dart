@@ -148,14 +148,6 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
                                   MediaQuery.of(context).size.height *
                                       0.06) // put the width and height you want
                               ),
-<<<<<<< HEAD
-                          onPressed: () =>changeIndex(context),
-                          //   Navigator.push(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) => Home()));
-                          // },
-=======
                           onPressed: () {
                             _navigateToNextScreen(context);
                             // Navigator.push(
@@ -163,7 +155,6 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
                             //     MaterialPageRoute(
                             //         builder: (context) => Home()));
                           },
->>>>>>> 65838d99caff7a4f78f0c32e7b674cc55f9bba9f
                           child: Text(
                             "Login",
                             style: TextStyle(
@@ -211,8 +202,6 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
         ),
       );
 }
-<<<<<<< HEAD
-=======
 
 _navigateToNextScreen(BuildContext context) {
   if (username.text == "admin@gmail.com" && password.text == "admin") {
@@ -271,5 +260,5 @@ _navigateToNextScreen(BuildContext context) {
           );
         });
   }
+
 }
->>>>>>> 65838d99caff7a4f78f0c32e7b674cc55f9bba9f
