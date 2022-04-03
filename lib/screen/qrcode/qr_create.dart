@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:web_services/screen/add_new_member.dart';
 
 class QrCodeGenerator extends StatefulWidget {
   const QrCodeGenerator({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class QrCodeGenerator extends StatefulWidget {
 
 class _QrCodeGeneratorState extends State<QrCodeGenerator> {
   TextEditingController datacontroller = TextEditingController();
-  String data = "456456";
+  String data = "webservice";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,11 +41,20 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          QrImage(
-            data: data,
+          InkWell(
+            onTap: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>Addmember()));
+            },
+            child: QrImage(data: data,
             size: 250,
             backgroundColor: Colors.white,
+            ),
           ),
+          // QrImage(
+          //   data: data,
+          //   size: 250,
+          //   backgroundColor: Colors.white,
+          // ),
           SizedBox(
             height: 20,
             width: MediaQuery.of(context).size.width,

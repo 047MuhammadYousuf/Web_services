@@ -5,7 +5,15 @@ class Addmember extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child: ListView(
+        children: [
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Name',
+            ),
+          )
+        ],
+      ),
     );
   }
 }
