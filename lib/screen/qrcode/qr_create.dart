@@ -23,7 +23,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
         title: const Text(
-          "Qr Code Generate",
+          "Scan to Join ",
           style: TextStyle(
             color: Colors.black,
             fontSize: 22,
