@@ -76,9 +76,7 @@ class _QrScannerState extends State<QrScanner> {
       setState(() {
         this.barcode = barcode;
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => Details(text: "${barcode}")));
+            context, MaterialPageRoute(builder: (context) => Details()));
       });
     });
   }

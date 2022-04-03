@@ -195,10 +195,16 @@ class _HomeState extends State<Home> {
                       margin: EdgeInsets.all(3),
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyHomePage()));
+                                  builder: (BuildContext context) =>
+                                      MyHomePage()),
+                              (Route<dynamic> route) => route is MyHomePage);
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => MyHomePage()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 63, 211, 211),
