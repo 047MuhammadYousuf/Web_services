@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Text("Status",
                                 style: TextStyle(
-                                    fontSize: 10, color: Colors.black))),
+                                    fontSize: 10, color: Colors.white))),
                       )),
                       // Expanded(
                       //     child: Container(
