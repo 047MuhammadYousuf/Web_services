@@ -6,6 +6,7 @@ import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
+import 'package:web_services/screen/setting.dart';
 
 // import 'package:fluttertoast/fluttertoast.dart';
 Color status = Color(0xff44D258);
@@ -160,7 +161,8 @@ class _HomeState extends State<Home> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ForgetPassword()));
+                                  builder: (context) =>
+                                      Setting_ForgetPassword()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.blue,

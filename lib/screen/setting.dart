@@ -13,7 +13,7 @@ class _ForgetPasswordState extends State<Setting_ForgetPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recovery'),
+        title: Text('Setting'),
         backgroundColor: Color(0xFF009C10),
       ),
       resizeToAvoidBottomInset: false,
@@ -56,7 +56,7 @@ class _ForgetPasswordState extends State<Setting_ForgetPassword> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.lightGreen,
+                    primary: Color.fromARGB(255, 109, 204, 248),
                     shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(25.0),
                     ),
