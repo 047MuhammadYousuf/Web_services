@@ -75,9 +75,11 @@ class _QrScannerState extends State<QrScanner> {
     controller.scannedDataStream.listen((barcode) {
       setState(() {
         this.barcode = barcode;
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Details()));
       });
+      controller.pauseCamera();
+      controller.dispose();
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Details()));
     });
   }
 }
