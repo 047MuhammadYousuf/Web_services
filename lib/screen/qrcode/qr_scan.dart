@@ -15,6 +15,7 @@ class _QrScannerState extends State<QrScanner> {
   final qrkey = GlobalKey(debugLabel: 'QR');
   QRViewController? controller;
   Barcode? barcode;
+  Barcode? barcodesave;
   @override
   void dispose() {
     // TODO: implement dispose
@@ -72,14 +73,16 @@ class _QrScannerState extends State<QrScanner> {
     setState(() {
       this.controller = controller;
     });
+
     controller.scannedDataStream.listen((barcode) {
       setState(() {
         this.barcode = barcode;
+        barcodesave = barcode;
       });
-      controller.pauseCamera();
-      controller.dispose();
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Details()));
+      if (barcode.code != null) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Details()));
+      }
     });
   }
 }
