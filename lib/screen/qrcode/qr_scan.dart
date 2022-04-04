@@ -17,6 +17,12 @@ class _QrScannerState extends State<QrScanner> {
   Barcode? barcode;
   Barcode? barcodesave;
   @override
+  void initState() {
+    super.initState();
+    barcode != null;
+  }
+
+  @override
   void dispose() {
     // TODO: implement dispose
     controller?.dispose();
@@ -75,6 +81,8 @@ class _QrScannerState extends State<QrScanner> {
     });
 
     controller.scannedDataStream.listen((barcode) {
+      controller.pauseCamera();
+      controller.dispose();
       setState(() {
         this.barcode = barcode;
         barcodesave = barcode;
