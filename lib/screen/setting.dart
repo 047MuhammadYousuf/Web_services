@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/qrcode/widgets.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({Key? key}) : super(key: key);
+class Setting_ForgetPassword extends StatefulWidget {
+  const Setting_ForgetPassword({Key? key}) : super(key: key);
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<Setting_ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _ForgetPasswordState extends State<Setting_ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
