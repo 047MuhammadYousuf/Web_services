@@ -74,15 +74,15 @@ class _DetailsState extends State<Details> {
                             labelText: 'Relationship',
                           )),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: TextField(
-                          cursorColor: Colors.green,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            labelText: 'Area',
-                          )),
-                    ),
+                    // Container(
+                    //   padding: EdgeInsets.all(10),
+                    //   child: TextField(
+                    //       cursorColor: Colors.green,
+                    //       decoration: InputDecoration(
+                    //         border: InputBorder.none,
+                    //         labelText: 'Area',
+                    //       )),
+                    // ),
                     Container(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -104,7 +104,7 @@ class _DetailsState extends State<Details> {
                               (Route<dynamic> route) => route is Home);
                         },
                         child: Text(
-                          "Details",
+                          "Save",
                           style: TextStyle(
                             fontSize: MediaQuery.of(context).size.width * 0.05,
                           ),
