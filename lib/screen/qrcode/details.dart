@@ -104,7 +104,7 @@ class _DetailsState extends State<Details> {
                               (Route<dynamic> route) => route is Home);
                         },
                         child: Text(
-                          "Details",
+                          "Save",
                           style: TextStyle(
                             fontSize: MediaQuery.of(context).size.width * 0.05,
                           ),

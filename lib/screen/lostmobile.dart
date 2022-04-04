@@ -68,7 +68,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     //         builder: (context) => ResetAnimation()));
                   },
                   child: Text(
-                    "Reset",
+                    "Save",
                     style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.05),
                   ))
