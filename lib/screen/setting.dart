@@ -31,7 +31,7 @@ class _ForgetPasswordState extends State<Setting_ForgetPassword> {
                   ),
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'assets/Setting.jpg',
+                    'assets/back.jpg',
                     width: MediaQuery.of(context).size.width * 0.35,
                   )),
               Container(
@@ -54,6 +54,7 @@ class _ForgetPasswordState extends State<Setting_ForgetPassword> {
                       labelText: 'Enter Recovery Password',
                     )),
               ),
+              Padding(padding: EdgeInsets.only(top: 12)),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromARGB(255, 109, 204, 248),
