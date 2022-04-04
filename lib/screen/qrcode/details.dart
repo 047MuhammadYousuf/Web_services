@@ -74,15 +74,15 @@ class _DetailsState extends State<Details> {
                             labelText: 'Relationship',
                           )),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: TextField(
-                          cursorColor: Colors.green,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            labelText: 'Area',
-                          )),
-                    ),
+                    // Container(
+                    //   padding: EdgeInsets.all(10),
+                    //   child: TextField(
+                    //       cursorColor: Colors.green,
+                    //       decoration: InputDecoration(
+                    //         border: InputBorder.none,
+                    //         labelText: 'Area',
+                    //       )),
+                    // ),
                     Container(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
