@@ -6,6 +6,7 @@ import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
+import 'package:web_services/screen/setting.dart';
 
 // import 'package:fluttertoast/fluttertoast.dart';
 Color status = Color(0xff44D258);
@@ -160,7 +161,8 @@ class _HomeState extends State<Home> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ForgetPassword()));
+                                  builder: (context) =>
+                                      Setting_ForgetPassword()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.blue,
@@ -189,8 +191,9 @@ class _HomeState extends State<Home> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                    )),
-                    Expanded(
+                    )
+                    ),
+                       Expanded(
                         child: Container(
                       margin: EdgeInsets.all(3),
                       child: ElevatedButton(
@@ -201,24 +204,30 @@ class _HomeState extends State<Home> {
                                   builder: (context) => QrScanner()));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.green,
+                          primary: Colors.lightGreen,
                         ),
                         child: Text(
                           'View  Member',
                           textAlign: TextAlign.center,
                         ),
                       ),
-                    )),
-
+                    )
+                    ),
                     Expanded(
                         child: Container(
                       margin: EdgeInsets.all(3),
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyHomePage()));
+                                  builder: (BuildContext context) =>
+                                      MyHomePage()),
+                              (Route<dynamic> route) => route is MyHomePage);
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => MyHomePage()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 63, 211, 211),
@@ -234,4 +243,4 @@ class _HomeState extends State<Home> {
               )
             ])));
   }
-}
+  }
