@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
     );
   }
 
-List colors = [Colors.red, Colors.green, Colors.yellow];
+  List colors = [Colors.red, Colors.green, Colors.yellow];
   Random random = new Random();
 
   int index = 0;
@@ -147,6 +147,7 @@ List colors = [Colors.red, Colors.green, Colors.yellow];
                                   20,
                                   MediaQuery.of(context).size.height *
                                       0.06) // put the width and height you want
+
                               ),
                           onPressed: () {
                             _navigateToNextScreen(context);
@@ -260,5 +261,4 @@ _navigateToNextScreen(BuildContext context) {
           );
         });
   }
-
 }
