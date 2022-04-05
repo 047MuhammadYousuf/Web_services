@@ -16,11 +16,58 @@ class _View_memberState extends State<View_member> {
         backgroundColor: Color.fromARGB(255, 82, 158, 89),
       ),
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 174, 179, 174),
+      backgroundColor: Color.fromARGB(255, 213, 216, 213),
       
       body: Container(
+        child: ListView(
+          children: [
+            transact(context, Icon(Icons.arrow_circle_up), Colors.red,
+                  "Muhammad Yousuf", "March 07,2022", ""),
+          ],
+        ),
 
       ),
     );
   }
+Widget transact(context, iconname, iconcolor, name, date, reminamount) {
+  return Container(
+    margin: EdgeInsets.only(top: 12, bottom: 12),
+    padding: EdgeInsets.all(5),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(15),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.2),
+          spreadRadius: 5,
+          blurRadius: 7,
+          offset: Offset(0, 3), // changes position of shadow
+        ),
+      ],
+    ),
+    child: ListTile(
+      iconColor: iconcolor,
+      leading: iconname,
+      title: Text(name,
+          style:
+          TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold)),
+      subtitle: Text(date),
+      trailing: Column(children: [
+        SizedBox(
+          height: 5,
+        ),  
+        Icon(Icons.delete),
+        // Text(
+        //        ,
+        //   style: TextStyle(fontWeight: FontWeight.bold),
+        // ),
+        // Text("Balance")
+      ]),
+      shape: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+      )
+    )
+      );
+    
+}
 }
