@@ -16,20 +16,21 @@ class _View_memberState extends State<View_member> {
         backgroundColor: Color.fromARGB(255, 82, 158, 89),
       ),
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 213, 216, 213),
+      backgroundColor: Color.fromARGB(255, 122, 206, 122),
       
       body: Container(
         child: ListView(
           children: [
-            transact(context, Icon(Icons.arrow_circle_up), Colors.red,
-                  "Muhammad Yousuf", "March 07,2022", ""),
+            view_member(context,  Colors.red,"Muhammad Yousuf", "March 07,2022"),
+            view_member(context,  Colors.red," Ahmed Imran",  "June 07,2020"),
+            view_member(context,  Colors.red,"Anas Younus", "June 07,2020"),
           ],
         ),
 
       ),
     );
   }
-Widget transact(context, iconname, iconcolor, name, date, reminamount) {
+Widget view_member(context,  iconcolor, name, date) {
   return Container(
     margin: EdgeInsets.only(top: 12, bottom: 12),
     padding: EdgeInsets.all(5),
@@ -47,7 +48,7 @@ Widget transact(context, iconname, iconcolor, name, date, reminamount) {
     ),
     child: ListTile(
       iconColor: iconcolor,
-      leading: iconname,
+      // leading: iconname,
       title: Text(name,
           style:
           TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold)),
@@ -56,12 +57,13 @@ Widget transact(context, iconname, iconcolor, name, date, reminamount) {
         SizedBox(
           height: 5,
         ),  
-        Icon(Icons.delete),
+        Icon(Icons.delete,
         // Text(
         //        ,
         //   style: TextStyle(fontWeight: FontWeight.bold),
         // ),
         // Text("Balance")
+        )
       ]),
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
