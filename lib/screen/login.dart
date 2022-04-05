@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
     );
   }
 
-List colors = [Colors.red, Colors.green, Colors.yellow];
+  List colors = [Colors.red, Colors.green, Colors.yellow];
   Random random = new Random();
 
   int index = 0;
@@ -208,7 +208,13 @@ _navigateToNextScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
     username.clear();
     password.clear();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('login'),
+    ));
   } else if (username != "admin@gmail.com" && password == "admin") {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Please enter valid credentials'),
+    ));
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -226,6 +232,9 @@ _navigateToNextScreen(BuildContext context) {
           );
         });
   } else if (username == "admin@gmail.com" && password != "admin") {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Please enter valid credentials'),
+    ));
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -243,6 +252,9 @@ _navigateToNextScreen(BuildContext context) {
           );
         });
   } else {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Please enter valid credentials'),
+    ));
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -260,5 +272,4 @@ _navigateToNextScreen(BuildContext context) {
           );
         });
   }
-
 }

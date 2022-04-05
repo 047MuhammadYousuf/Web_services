@@ -62,6 +62,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     ),
                   ),
                   onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text('Email is sent'),
+                    ));
                     // Navigator.pushReplacement(
                     //     context,
                     //     MaterialPageRoute(
