@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/landing.dart';
 import 'package:web_services/screen/lostmobile.dart';
+import 'package:web_services/screen/view_member.dart';
 
 void main() {
   runApp(const MyApp());

@@ -7,6 +7,7 @@ import 'package:web_services/screen/qrcode/home_qr.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
 import 'package:web_services/screen/setting.dart';
+import 'package:web_services/screen/view_member.dart';
 
 // import 'package:fluttertoast/fluttertoast.dart';
 Color status = Color(0xff44D258);
@@ -192,7 +193,28 @@ class _HomeState extends State<Home> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                    )),
+                    )
+                    ),
+                       Expanded(
+                        child: Container(
+                      margin: EdgeInsets.all(3),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => View_member()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.lightGreen,
+                        ),
+                        child: Text(
+                          'View  Members',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    )
+                    ),
                     Expanded(
                         child: Container(
                       margin: EdgeInsets.all(3),
@@ -223,4 +245,4 @@ class _HomeState extends State<Home> {
               )
             ])));
   }
-}
+  }
