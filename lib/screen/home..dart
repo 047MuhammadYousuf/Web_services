@@ -188,7 +188,7 @@ class _HomeState extends State<Home> {
                           primary: Colors.green,
                         ),
                         child: Text(
-                          'Add  Member',
+                          'Add  Members',
                           textAlign: TextAlign.center,
                         ),
                       ),

@@ -12,7 +12,7 @@ class _View_memberState extends State<View_member> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('View Member'),
+        title: Text('View Members'),
         backgroundColor: Color.fromARGB(255, 82, 158, 89),
       ),
       resizeToAvoidBottomInset: false,
