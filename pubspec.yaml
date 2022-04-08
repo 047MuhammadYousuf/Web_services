@@ -38,6 +38,7 @@ dependencies:
   qr_flutter: ^4.0.0
   qr_code_scanner: ^0.7.0
   local_auth: ^1.1.11
+  http: ^0.13.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

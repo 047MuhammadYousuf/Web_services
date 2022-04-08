@@ -193,9 +193,8 @@ class _HomeState extends State<Home> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                    )
-                    ),
-                       Expanded(
+                    )),
+                    Expanded(
                         child: Container(
                       margin: EdgeInsets.all(3),
                       child: ElevatedButton(
@@ -213,8 +212,7 @@ class _HomeState extends State<Home> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                    )
-                    ),
+                    )),
                     Expanded(
                         child: Container(
                       margin: EdgeInsets.all(3),
@@ -245,4 +243,4 @@ class _HomeState extends State<Home> {
               )
             ])));
   }
-  }
+}
