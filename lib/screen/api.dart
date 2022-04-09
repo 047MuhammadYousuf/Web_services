@@ -56,12 +56,7 @@ Future updateAlbum(id, qrCode, fullName, relation) async {
   final response = await http.put(
     Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
     body: jsonEncode({
-      {
-        "id": "$id",
-        "fullName": "$qrCode",
-        "qrCode": "$fullName",
-        "relation": "$relation"
-      }
+      {"fullName": "$qrCode", "qrCode": "$fullName", "relation": "$relation"}
     }),
   );
 

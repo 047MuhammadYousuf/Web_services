@@ -10,7 +10,9 @@ class View_member extends StatefulWidget {
 
 class _View_memberState extends State<View_member> {
   late Future _futuremember;
-
+  TextEditingController name = TextEditingController();
+  TextEditingController qr = TextEditingController();
+  TextEditingController relation = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -76,6 +78,102 @@ class _View_memberState extends State<View_member> {
                                     Wrap(children: [
                                       InkWell(
                                         onTap: () {
+                                          showDialog(
+                                              context: context,
+                                              builder: (BuildContext context) {
+                                                return AlertDialog(
+                                                    title: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text(
+                                                          "Update Task",
+                                                        ),
+                                                        InkWell(
+                                                          onTap: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Icon(
+                                                            Icons.cancel,
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    actions: [
+                                                      Column(
+                                                        children: [
+                                                          Container(
+                                                            padding:
+                                                                EdgeInsets.only(
+                                                                    left: 12),
+                                                            child: TextField(
+                                                              controller: name,
+                                                              onChanged:
+                                                                  (value) {},
+                                                              decoration: const InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  hintText:
+                                                                      'Full name'),
+                                                            ),
+                                                          ),
+                                                          Container(
+                                                            padding:
+                                                                EdgeInsets.only(
+                                                                    left: 12),
+                                                            child: TextField(
+                                                              controller: qr,
+                                                              onChanged:
+                                                                  (value) {},
+                                                              decoration: const InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  hintText:
+                                                                      'Qr code'),
+                                                            ),
+                                                          ),
+                                                          Container(
+                                                            padding:
+                                                                EdgeInsets.only(
+                                                                    left: 12),
+                                                            child: TextField(
+                                                              controller:
+                                                                  relation,
+                                                              onChanged:
+                                                                  (value) {},
+                                                              decoration: const InputDecoration(
+                                                                  border:
+                                                                      InputBorder
+                                                                          .none,
+                                                                  hintText:
+                                                                      'relation'),
+                                                            ),
+                                                          ),
+                                                          ElevatedButton.icon(
+                                                              onPressed: () {
+                                                                updateAlbum(
+                                                                    "${snapshot.data[index].id}",
+                                                                    qr.text,
+                                                                    name.text,
+                                                                    relation
+                                                                        .text);
+                                                                Navigator.pop(
+                                                                    context);
+                                                              },
+                                                              style: ElevatedButton
+                                                                  .styleFrom(),
+                                                              icon: Icon(
+                                                                  Icons.check),
+                                                              label: Text(
+                                                                  "Update It")),
+                                                        ],
+                                                      )
+                                                    ]);
+                                              });
                                           // getmembers();
                                         },
                                         child: Icon(
