@@ -65,8 +65,14 @@ class _View_memberState extends State<View_member> {
                                     SizedBox(
                                       height: 5,
                                     ),
-                                    Icon(
-                                      Icons.delete,
+                                    InkWell(
+                                      onTap: () {
+                                        deletemember(
+                                            "${snapshot.data[index].id}");
+                                      },
+                                      child: Icon(
+                                        Icons.delete,
+                                      ),
                                     )
                                   ]),
                                   shape: OutlineInputBorder(
