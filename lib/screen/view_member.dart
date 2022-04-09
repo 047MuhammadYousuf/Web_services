@@ -9,6 +9,14 @@ class View_member extends StatefulWidget {
 }
 
 class _View_memberState extends State<View_member> {
+  late Future _futuremember;
+
+  @override
+  void initState() {
+    super.initState();
+    _futuremember = getmembers();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +30,7 @@ class _View_memberState extends State<View_member> {
         child: ListView(
           children: [
             FutureBuilder(
-                future: getmembers(),
+                future: _futuremember,
                 builder: (context, AsyncSnapshot snapshot) {
                   if (snapshot.data == null) {
                     print("object  :null data  ${snapshot.data}");
@@ -65,15 +73,29 @@ class _View_memberState extends State<View_member> {
                                     SizedBox(
                                       height: 5,
                                     ),
-                                    InkWell(
-                                      onTap: () {
-                                        deletemember(
-                                            "${snapshot.data[index].id}");
-                                      },
-                                      child: Icon(
-                                        Icons.delete,
+                                    Wrap(children: [
+                                      InkWell(
+                                        onTap: () {
+                                          // getmembers();
+                                        },
+                                        child: Icon(
+                                          Icons.edit,
+                                        ),
                                       ),
-                                    )
+                                      InkWell(
+                                        onTap: () {
+                                          setState(() {
+                                            deletemember(
+                                                "${snapshot.data[index].id}");
+                                            _futuremember = getmembers();
+                                          });
+                                          // getmembers();
+                                        },
+                                        child: Icon(
+                                          Icons.delete,
+                                        ),
+                                      ),
+                                    ]),
                                   ]),
                                   shape: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20),

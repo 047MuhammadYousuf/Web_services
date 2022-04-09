@@ -38,14 +38,40 @@ class Calldata {
 }
 
 Future deletemember(String id) async {
-  final http.Response response = await http
-      .delete(Uri.parse('https://member-api.herokuapp.com/member/delete/$id'));
+  final http.Response response = await http.delete(
+    Uri.parse('https://member-api.herokuapp.com/member/delete/$id'),
+  );
 
   if (response.statusCode == 200) {
-    return jsonDecode(response.body);
+    print("$response");
+    // return response;
   } else {
     // If the server did not return a "200 OK response",
     // then throw an exception.
     throw Exception('Failed to delete album.');
+  }
+}
+
+Future updateAlbum(id, qrCode, fullName, relation) async {
+  final response = await http.put(
+    Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
+    body: jsonEncode({
+      {
+        "id": "$id",
+        "fullName": "$qrCode",
+        "qrCode": "$fullName",
+        "relation": "$relation"
+      }
+    }),
+  );
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return jsonDecode(response.body);
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to update album.');
   }
 }
