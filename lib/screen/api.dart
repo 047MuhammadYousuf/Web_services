@@ -39,7 +39,7 @@ class Calldata {
 
 Future deletemember(String id) async {
   final http.Response response = await http
-      .delete(Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'));
+      .delete(Uri.parse('https://member-api.herokuapp.com/member/delete/$id'));
 
   if (response.statusCode == 200) {
     return jsonDecode(response.body);
