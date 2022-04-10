@@ -163,6 +163,10 @@ class _View_memberState extends State<View_member> {
                                                                         .text);
                                                                 _futuremember =
                                                                     getmembers();
+                                                                qr.clear();
+                                                                name.clear();
+                                                                relation
+                                                                    .clear();
                                                                 Navigator.pop(
                                                                     context);
                                                               },
