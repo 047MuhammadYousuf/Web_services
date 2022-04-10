@@ -45,10 +45,6 @@ Future deletemember(String id) async {
   if (response.statusCode == 200) {
     print("$response");
     // return response;
-  } else {
-    // If the server did not return a "200 OK response",
-    // then throw an exception.
-    throw Exception('Failed to delete album.');
   }
 }
 
@@ -95,9 +91,5 @@ Future updateAlbum(id, qrCode, fullName, relation) async {
     print("objecsnisdsdnisdsdit");
     print("${response.body}");
     // return jsonDecode(response.body);
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to update album.');
   }
 }

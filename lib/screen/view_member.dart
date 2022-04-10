@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/api.dart';
+import 'package:web_services/screen/qrcode/qr_scan.dart';
 
 class View_member extends StatefulWidget {
   const View_member({Key? key}) : super(key: key);
@@ -21,6 +22,10 @@ class _View_memberState extends State<View_member> {
 
   @override
   Widget build(BuildContext context) {
+    final overlay = LoadingOverlay.of(context);
+
+    var loading = false;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('View Members'),
@@ -154,26 +159,88 @@ class _View_memberState extends State<View_member> {
                                                             ),
                                                           ),
                                                           ElevatedButton.icon(
-                                                              onPressed: () {
-                                                                updateAlbum(
-                                                                    "${snapshot.data[index].id}",
-                                                                    qr.text,
-                                                                    name.text,
-                                                                    relation
-                                                                        .text);
-                                                                _futuremember =
-                                                                    getmembers();
-                                                                qr.clear();
-                                                                name.clear();
-                                                                relation
-                                                                    .clear();
-                                                                Navigator.pop(
-                                                                    context);
-                                                              },
+                                                            onPressed: loading
+                                                                ? null
+                                                                : () {
+                                                                    setState(() =>
+                                                                        loading =
+                                                                            true);
+                                                                    overlay;
+                                                                    updateAlbum(
+                                                                            "${snapshot.data[index].id}",
+                                                                            qr.text,
+                                                                            name.text,
+                                                                            relation.text)
+                                                                        .then((value) {
+                                                                      setState(
+                                                                          () {
+                                                                        _futuremember =
+                                                                            getmembers();
+                                                                        overlay;
+                                                                      });
+
+                                                                      qr.clear();
+                                                                      name.clear();
+                                                                      relation
+                                                                          .clear();
+                                                                      setState(
+                                                                          () {
+                                                                        loading =
+                                                                            false;
+                                                                      });
+                                                                      Navigator.pop(
+                                                                          context);
+                                                                    });
+                                                                  },
+                                                            style: ElevatedButton
+                                                                .styleFrom(
+                                                                    padding: const EdgeInsets
+                                                                            .all(
+                                                                        16.0)),
+                                                            icon: loading
+                                                                ? Container(
+                                                                    width: 24,
+                                                                    height: 24,
+                                                                    padding:
+                                                                        const EdgeInsets.all(
+                                                                            2.0),
+                                                                    child:
+                                                                        const CircularProgressIndicator(
+                                                                      color: Colors
+                                                                          .white,
+                                                                      strokeWidth:
+                                                                          3,
+                                                                    ),
+                                                                  )
+                                                                : const Icon(Icons
+                                                                    .feedback),
+                                                            label: const Text(
+                                                                'SUBMIT'),
+                                                          ),
+                                                          ElevatedButton.icon(
+                                                              onPressed: loading
+                                                                  ? null
+                                                                  : () {},
                                                               style: ElevatedButton
                                                                   .styleFrom(),
-                                                              icon: Icon(
-                                                                  Icons.check),
+                                                              icon: loading
+                                                                  ? Container(
+                                                                      width: 24,
+                                                                      height:
+                                                                          24,
+                                                                      padding:
+                                                                          const EdgeInsets.all(
+                                                                              2.0),
+                                                                      child:
+                                                                          const CircularProgressIndicator(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        strokeWidth:
+                                                                            3,
+                                                                      ),
+                                                                    )
+                                                                  : const Icon(Icons
+                                                                      .feedback),
                                                               label: Text(
                                                                   "Update It")),
                                                         ],
@@ -190,8 +257,12 @@ class _View_memberState extends State<View_member> {
                                         onTap: () {
                                           setState(() {
                                             deletemember(
-                                                "${snapshot.data[index].id}");
-                                            _futuremember = getmembers();
+                                                    "${snapshot.data[index].id}")
+                                                .then((value) {
+                                              setState(() {
+                                                _futuremember = getmembers();
+                                              });
+                                            });
                                           });
                                           // getmembers();
                                         },
@@ -209,6 +280,14 @@ class _View_memberState extends State<View_member> {
                 }),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => QrScanner()));
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -252,5 +331,40 @@ class _View_memberState extends State<View_member> {
             shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
             )));
+  }
+}
+
+class LoadingOverlay {
+  BuildContext _context;
+
+  void hide() {
+    Navigator.of(_context).pop();
+  }
+
+  void show() {
+    showDialog(
+        context: _context,
+        barrierDismissible: false,
+        builder: (ctx) => _FullScreenLoader());
+  }
+
+  Future<T> during<T>(Future<T> future) {
+    show();
+    return future.whenComplete(() => hide());
+  }
+
+  LoadingOverlay._create(this._context);
+
+  factory LoadingOverlay.of(BuildContext context) {
+    return LoadingOverlay._create(context);
+  }
+}
+
+class _FullScreenLoader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        decoration: const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
+        child: const Center(child: CircularProgressIndicator()));
   }
 }
