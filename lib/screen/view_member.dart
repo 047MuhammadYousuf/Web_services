@@ -161,6 +161,8 @@ class _View_memberState extends State<View_member> {
                                                                     name.text,
                                                                     relation
                                                                         .text);
+                                                                _futuremember =
+                                                                    getmembers();
                                                                 Navigator.pop(
                                                                     context);
                                                               },

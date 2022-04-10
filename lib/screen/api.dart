@@ -52,18 +52,49 @@ Future deletemember(String id) async {
   }
 }
 
-Future updateAlbum(id, qrCode, fullName, relation) async {
+Future updateAlbum1(id, qrCode, fullName, relation) async {
+  // final response = await http.put(
+  //   Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
+  //   body: jsonEncode({
+  //     {"fullName": "$qrCode", "qrCode": "$fullName", "relation": "$relation"}
+  //   }),
+  // );
   final response = await http.put(
-    Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
-    body: jsonEncode({
-      {"fullName": "$qrCode", "qrCode": "$fullName", "relation": "$relation"}
-    }),
-  );
+      Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
+      body: jsonEncode({
+        'fullName': '$qrCode',
+        'qrCode': '$fullName',
+        'relation': '$relation',
+      }));
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-    return jsonDecode(response.body);
+    print("$response");
+    // return jsonDecode(response.body);
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to update album.');
+  }
+}
+
+Future updateAlbum(id, qrCode, fullName, relation) async {
+  final response = await http.put(
+      Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode({
+        'fullName': '$qrCode',
+        'qrCode': '$fullName',
+        'relation': '$relation',
+      }));
+  response;
+  print("api call check data");
+  print(response.statusCode);
+  if (response.statusCode == 200) {
+    print("objecsnisdsdnisdsdit");
+    print("${response.body}");
+    // return jsonDecode(response.body);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
