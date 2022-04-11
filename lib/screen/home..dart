@@ -151,96 +151,149 @@ class _HomeState extends State<Home> {
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                        child: Container(
-                      margin: EdgeInsets.all(3),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      Setting_ForgetPassword()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                        ),
-                        child: Text(
-                          'Setting',
-                          textAlign: TextAlign.center,
-                        ),
+                  padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Setting_ForgetPassword()));
+                          },
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(25.0),
+                              )),
+                          child: Text("Setting")),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.05,
                       ),
-                    )),
-                    // Expanded(
-                    //     child: Container(
-                    //   margin: EdgeInsets.all(3),
-                    //   child: ElevatedButton(
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //           context,
-                    //           MaterialPageRoute(
-                    //               builder: (context) => QrScanner()));
-                    //     },
-                    //     style: ElevatedButton.styleFrom(
-                    //       primary: Colors.green,
-                    //     ),
-                    //     child: Text(
-                    //       'Add  Member',
-                    //       textAlign: TextAlign.center,
-                    //     ),
-                    //   ),
-                    // )),
-                    Expanded(
-                        child: Container(
-                      margin: EdgeInsets.all(3),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => View_member()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.lightGreen,
-                        ),
-                        child: Text(
-                          'View  Members',
-                          textAlign: TextAlign.center,
-                        ),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => View_member()));
+                          },
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(25.0),
+                              )),
+                          child: Text("View Members")),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.05,
                       ),
-                    )),
-                    Expanded(
-                        child: Container(
-                      margin: EdgeInsets.all(3),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      MyHomePage()),
-                              (Route<dynamic> route) => route is MyHomePage);
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => MyHomePage()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 63, 211, 211),
-                        ),
-                        child: Text(
-                          'Logout',
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    )),
-                  ],
-                ),
-              )
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        MyHomePage()),
+                                (Route<dynamic> route) => route is MyHomePage);
+                          },
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(25.0),
+                              )),
+                          child: Text("Logout"))
+                    ],
+                  )
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,s
+                  //   children: [
+                  //     Expanded(
+                  //         child: Container(
+                  //       margin: EdgeInsets.all(3),
+                  //       child: ElevatedButton(
+                  //         onPressed: () {
+                  //           Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) =>
+                  //                       Setting_ForgetPassword()));
+                  //         },
+                  //         style: ElevatedButton.styleFrom(
+                  //           primary: Colors.blue,
+                  //         ),
+                  //         child: Text(
+                  //           'Setting',
+                  //           textAlign: TextAlign.center,
+                  //         ),
+                  //       ),
+                  //     )),
+                  //     // Expanded(
+                  //     //     child: Container(
+                  //     //   margin: EdgeInsets.all(3),
+                  //     //   child: ElevatedButton(
+                  //     //     onPressed: () {
+                  //     //       Navigator.push(
+                  //     //           context,
+                  //     //           MaterialPageRoute(
+                  //     //               builder: (context) => QrScanner()));
+                  //     //     },
+                  //     //     style: ElevatedButton.styleFrom(
+                  //     //       primary: Colors.green,
+                  //     //     ),
+                  //     //     child: Text(
+                  //     //       'Add  Member',
+                  //     //       textAlign: TextAlign.center,
+                  //     //     ),
+                  //     //   ),
+                  //     // )),
+                  //     Expanded(
+                  //         child: Container(
+                  //       margin: EdgeInsets.all(3),
+                  //       child: ElevatedButton(
+                  //         onPressed: () {
+                  //           Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => View_member()));
+                  //         },
+                  //         style: ElevatedButton.styleFrom(
+                  //           primary: Colors.lightGreen,
+                  //         ),
+                  //         child: Text(
+                  //           'View  Members',
+                  //           textAlign: TextAlign.center,
+                  //         ),
+                  //       ),
+                  //     )),
+                  //     Expanded(
+                  //         child: Container(
+                  //       margin: EdgeInsets.all(3),
+                  //       child: ElevatedButton(
+                  //         onPressed: () {
+                  //           Navigator.pushAndRemoveUntil(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (BuildContext context) =>
+                  //                       MyHomePage()),
+                  //               (Route<dynamic> route) => route is MyHomePage);
+                  //           // Navigator.push(
+                  //           //     context,
+                  //           //     MaterialPageRoute(
+                  //           //         builder: (context) => MyHomePage()));
+                  //         },
+                  //         style: ElevatedButton.styleFrom(
+                  //           primary: Color.fromARGB(255, 63, 211, 211),
+                  //         ),
+                  //         child: Text(
+                  //           'Logout',
+                  //           textAlign: TextAlign.center,
+                  //         ),
+                  //       ),
+                  //     )),
+                  //   ],
+                  // ),
+
+                  )
             ])));
   }
 }
