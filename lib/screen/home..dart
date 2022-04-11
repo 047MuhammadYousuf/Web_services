@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Color.fromARGB(255, 165, 234, 201),
         appBar: AppBar(
           backgroundColor: Color(0xFF009C10),
           title: Text('Home Screen'),
@@ -163,6 +163,7 @@ class _HomeState extends State<Home> {
                                         Setting_ForgetPassword()));
                           },
                           style: ElevatedButton.styleFrom(
+                              elevation: 3,
                               primary: Colors.green,
                               shape: new RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(25.0),
