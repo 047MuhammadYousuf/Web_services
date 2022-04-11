@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                     ]),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.15,
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               Container(
                 padding: EdgeInsets.only(
@@ -148,7 +148,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.15,
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
