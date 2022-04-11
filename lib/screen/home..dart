@@ -175,25 +175,25 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     )),
-                    Expanded(
-                        child: Container(
-                      margin: EdgeInsets.all(3),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => QrScanner()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.green,
-                        ),
-                        child: Text(
-                          'Add  Member',
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    )),
+                    // Expanded(
+                    //     child: Container(
+                    //   margin: EdgeInsets.all(3),
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //       Navigator.push(
+                    //           context,
+                    //           MaterialPageRoute(
+                    //               builder: (context) => QrScanner()));
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //       primary: Colors.green,
+                    //     ),
+                    //     child: Text(
+                    //       'Add  Member',
+                    //       textAlign: TextAlign.center,
+                    //     ),
+                    //   ),
+                    // )),
                     Expanded(
                         child: Container(
                       margin: EdgeInsets.all(3),
