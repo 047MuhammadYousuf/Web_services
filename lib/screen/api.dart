@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:web_services/screen/qrcode/loader.dart';
 
 getmembers() async {
+  DialogHelper.showLoading('Fetching data');
+
   try {
     final response = await http
         .get(Uri.parse('https://member-api.herokuapp.com/member/all'));
@@ -22,6 +25,8 @@ getmembers() async {
     }
 
     print("List final is ${calldatascreen[0].fullName}");
+    DialogHelper.hideLoading();
+
     return calldatascreen;
   } catch (e) {
     print("   error catch $e");
@@ -38,6 +43,7 @@ class Calldata {
 }
 
 Future deletemember(String id) async {
+  DialogHelper.showLoading('Fetching data');
   final http.Response response = await http.delete(
     Uri.parse('https://member-api.herokuapp.com/member/delete/$id'),
   );
