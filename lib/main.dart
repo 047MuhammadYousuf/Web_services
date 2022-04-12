@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:web_services/screen/landing.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/view_member.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Webservices',
       theme: ThemeData(
@@ -24,19 +24,23 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-class MyHomePage  extends StatefulWidget {
-  const MyHomePage({ Key? key }) : super(key: key);
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void initState () {
+  void initState() {
     super.initState();
-    Timer(Duration(seconds: 3),  () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => landing())));
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (BuildContext context) => landing())));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,10 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       "Welcome to next page \n Best of Luck",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.width*0.045
-                          ,
-                          fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.045,
+                        fontWeight: FontWeight.bold,
                       ),
                     )
                   ],
@@ -106,5 +109,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  static void showLoading([String? message]) {
+    Get.dialog(
+      Dialog(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularProgressIndicator(),
+              SizedBox(height: 8),
+              Text(message ?? 'Loading...'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  //hide loading
+  static void hideLoading() {
+    if (Get.isDialogOpen!) Get.back();
+  }
 }
- 
