@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:web_services/screen/api.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class View_member extends StatefulWidget {
   const View_member({Key? key}) : super(key: key);

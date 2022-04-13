@@ -5,6 +5,7 @@ import 'package:web_services/screen/landing.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/view_member.dart';
 import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
+      builder: EasyLoading.init(),
     );
   }
 }

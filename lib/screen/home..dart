@@ -8,6 +8,7 @@ import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
 import 'package:web_services/screen/setting.dart';
 import 'package:web_services/screen/view_member.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 // import 'package:fluttertoast/fluttertoast.dart';
 Color status = Color(0xff44D258);
@@ -24,6 +25,7 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    EasyLoading.dismiss();
 
     Random objectname = Random();
     int number = objectname.nextInt(3);

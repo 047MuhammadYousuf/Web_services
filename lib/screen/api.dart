@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:web_services/screen/qrcode/loader.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 getmembers() async {
-  DialogHelper.showLoading('Fetching data');
+  // DialogHelper.showLoading('Fetching data');
+  EasyLoading.show(status: 'loading...');
 
   try {
     final response = await http
@@ -25,7 +27,8 @@ getmembers() async {
     }
 
     print("List final is ${calldatascreen[0].fullName}");
-    DialogHelper.hideLoading();
+    // DialogHelper.hideLoading();
+    EasyLoading.dismiss();
 
     return calldatascreen;
   } catch (e) {
@@ -34,7 +37,7 @@ getmembers() async {
 }
 
 class Calldata {
-  int? id;
+  String? id;
   String? qrCode;
   String? fullName;
   String? relation;
@@ -43,7 +46,9 @@ class Calldata {
 }
 
 Future deletemember(String id) async {
-  DialogHelper.showLoading('Fetching data');
+  // DialogHelper.showLoading('Fetching data');
+  EasyLoading.show(status: 'loading...');
+
   final http.Response response = await http.delete(
     Uri.parse('https://member-api.herokuapp.com/member/delete/$id'),
   );
@@ -51,10 +56,13 @@ Future deletemember(String id) async {
   if (response.statusCode == 200) {
     print("$response");
     // return response;
+    EasyLoading.dismiss();
   }
 }
 
 Future updateAlbum1(id, qrCode, fullName, relation) async {
+  EasyLoading.show(status: 'loading...');
+
   // final response = await http.put(
   //   Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
   //   body: jsonEncode({
@@ -71,6 +79,8 @@ Future updateAlbum1(id, qrCode, fullName, relation) async {
 
   if (response.statusCode == 200) {
     print("$response");
+    EasyLoading.dismiss();
+
     // return jsonDecode(response.body);
   } else {
     // If the server did not return a 200 OK response,
@@ -80,6 +90,8 @@ Future updateAlbum1(id, qrCode, fullName, relation) async {
 }
 
 Future updateAlbum(id, qrCode, fullName, relation) async {
+  EasyLoading.show(status: 'loading...');
+
   final response = await http.put(
       Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
       headers: <String, String>{
@@ -96,6 +108,8 @@ Future updateAlbum(id, qrCode, fullName, relation) async {
   if (response.statusCode == 200) {
     print("objecsnisdsdnisdsdit");
     print("${response.body}");
+    EasyLoading.dismiss();
+
     // return jsonDecode(response.body);
   }
 }
