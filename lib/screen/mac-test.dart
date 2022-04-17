@@ -1,38 +1,52 @@
 // import 'package:flutter/material.dart';
-// import 'package:macadress_gen/macadress_gen.dart';
+// import 'dart:async';
 
-// class Macadd extends StatefulWidget {
+// import 'package:flutter/services.dart';
+// class MyApp extends StatefulWidget {
 //   @override
-//   _MacaddState createState() => _MacaddState();
+//   _MyAppState createState() => _MyAppState();
 // }
 
-// class _MacaddState extends State<Macadd> {
-//   MacadressGen macadressGen = MacadressGen();
+// class _MyAppState extends State<MyApp> {
+//   String _platformVersion = 'Unknown';
 
-//   String? mac;
+//   @override
+//   void initState() {
+//     super.initState();
+//     initPlatformState();
+//   }
+
+//   // Platform messages are asynchronous, so we initialize in an async method.
+//   Future<void> initPlatformState() async {
+//     String platformVersion;
+//     // Platform messages may fail, so we use a try/catch PlatformException.
+//     try {
+//       platformVersion = await GetMac.macAddress;
+//     } on PlatformException {
+//       platformVersion = 'Failed to get Device MAC Address.';
+//     }
+
+//     // If the widget was removed from the tree while the asynchronous platform
+//     // message was in flight, we want to discard the reply rather than calling
+//     // setState to update our non-existent appearance.
+//     if (!mounted) return;
+
+//     setState(() {
+//       _platformVersion = platformVersion;
+//     });
+//   }
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('MAC ADDRESS'),
-//       ),
-//       body: Center(
-//           child: Text(
-//         mac ?? 'MAC ',
-//         style: TextStyle(
-//             fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black54),
-//       )),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: () async {
-//           await getMAc();
-//           setState(() {});
-//         },
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('Plugin example app'),
+//         ),
+//         body: Center(
+//           child: Text('MAC Address : $_platformVersion\n'),
+//         ),
 //       ),
 //     );
-//   }
-
-//   Future getMAc() async {
-//     mac = await macadressGen.getMac();
 //   }
 // }
