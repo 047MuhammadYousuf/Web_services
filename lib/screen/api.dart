@@ -5,7 +5,6 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 getmembers() async {
   // DialogHelper.showLoading('Fetching data');
-  EasyLoading.show(status: 'loading...');
 
   try {
     final response = await http
@@ -28,7 +27,7 @@ getmembers() async {
 
     print("List final is ${calldatascreen[0].fullName}");
     // DialogHelper.hideLoading();
-    EasyLoading.dismiss();
+    // EasyLoading.dismiss();
 
     return calldatascreen;
   } catch (e) {

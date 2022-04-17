@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
+import 'package:web_services/screen/mac-test.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
@@ -158,11 +159,15 @@ class _HomeState extends State<Home> {
                     children: [
                       ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        Setting_ForgetPassword()));
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) =>
+                            //             Setting_ForgetPassword()));
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => Macadd()));
                           },
                           style: ElevatedButton.styleFrom(
                               elevation: 3,

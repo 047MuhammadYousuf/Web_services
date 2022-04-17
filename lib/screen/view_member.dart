@@ -42,7 +42,7 @@ class _View_memberState extends State<View_member> {
                 builder: (context, AsyncSnapshot snapshot) {
                   if (snapshot.data == null) {
                     print("object  :null data  ${snapshot.data}");
-                    return Text("");
+                    return Center(child: CircularProgressIndicator());
                   } else {
                     print("object  :has data  ${snapshot.data[0].relation}");
 

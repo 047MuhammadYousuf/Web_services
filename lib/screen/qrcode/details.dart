@@ -106,16 +106,16 @@ class _DetailsState extends State<Details> {
                             ),
                         onPressed: () {
                           createmember(widget.code, name.text, relation.text)
-                              .then((value) {});
+                              .then((value) {
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) => Home()),
+                                (Route<dynamic> route) => route is Home);
+                          });
 
-                          qr.clear();
                           name.clear();
                           relation.clear();
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) => Home()),
-                              (Route<dynamic> route) => route is Home);
                         },
                         child: Text(
                           "Save",
