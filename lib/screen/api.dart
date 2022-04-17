@@ -68,8 +68,8 @@ Future updatemember(id, qrCode, fullName, relation) async {
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode({
-        'fullName': '$qrCode',
-        'qrCode': '$fullName',
+        'fullName': '$fullName',
+        'qrCode': '$qrCode',
         'relation': '$relation',
       }));
   response;
@@ -93,8 +93,8 @@ Future createmember(qrCode, fullName, relation) async {
             'Content-Type': 'application/json; charset=UTF-8',
           },
           body: jsonEncode({
-            'fullName': '$qrCode',
-            'qrCode': '$fullName',
+            'fullName': '$fullName',
+            'qrCode': '$qrCode',
             'relation': '$relation',
           }));
   response;

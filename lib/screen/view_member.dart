@@ -74,7 +74,8 @@ class _View_memberState extends State<View_member> {
                                       style: TextStyle(
                                           color: Colors.grey[800],
                                           fontWeight: FontWeight.bold)),
-                                  subtitle: Text("date"),
+                                  subtitle:
+                                      Text("${snapshot.data[index].relation}"),
                                   trailing: Column(children: [
                                     SizedBox(
                                       height: 5,

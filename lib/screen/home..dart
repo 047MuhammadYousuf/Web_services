@@ -157,59 +157,69 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.symmetric(horizontal: 13, vertical: 5),
                   child: Column(
                     children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) =>
-                            //             Setting_ForgetPassword()));
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => Macadd()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                              elevation: 3,
-                              primary: Colors.green,
-                              shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(25.0),
-                              )),
-                          child: Text("Setting")),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                      ),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => View_member()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.green,
-                              shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(25.0),
-                              )),
-                          child: Text("View Members")),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                      ),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        MyHomePage()),
-                                (Route<dynamic> route) => route is MyHomePage);
-                          },
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.green,
-                              shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(25.0),
-                              )),
-                          child: Text("Logout"))
+                      Row(children: [
+                        Expanded(
+                          child: ElevatedButton(
+                              onPressed: () {
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) =>
+                                //             Setting_ForgetPassword()));
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) => Macadd()));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 3,
+                                  primary: Colors.green,
+                                  shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                  )),
+                              child: Text("Setting")),
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => View_member()));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.green,
+                                  shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(25.0),
+                                  )),
+                              child: Text("View Members")),
+                        ),
+                      ]),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              MyHomePage()),
+                                      (Route<dynamic> route) =>
+                                          route is MyHomePage);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.green,
+                                    shape: new RoundedRectangleBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                    )),
+                                child: Text("Logout")),
+                          ),
+                        ],
+                      )
                     ],
                   )
                   // Row(
