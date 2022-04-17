@@ -60,36 +60,7 @@ Future deletemember(String id) async {
   }
 }
 
-Future updateAlbum1(id, qrCode, fullName, relation) async {
-  EasyLoading.show(status: 'loading...');
-
-  // final response = await http.put(
-  //   Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
-  //   body: jsonEncode({
-  //     {"fullName": "$qrCode", "qrCode": "$fullName", "relation": "$relation"}
-  //   }),
-  // );
-  final response = await http.put(
-      Uri.parse('https://member-api.herokuapp.com/member/update/$id'),
-      body: jsonEncode({
-        'fullName': '$qrCode',
-        'qrCode': '$fullName',
-        'relation': '$relation',
-      }));
-
-  if (response.statusCode == 200) {
-    print("$response");
-    EasyLoading.dismiss();
-
-    // return jsonDecode(response.body);
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to update album.');
-  }
-}
-
-Future updateAlbum(id, qrCode, fullName, relation) async {
+Future updatemember(id, qrCode, fullName, relation) async {
   EasyLoading.show(status: 'loading...');
 
   final response = await http.put(
@@ -102,6 +73,31 @@ Future updateAlbum(id, qrCode, fullName, relation) async {
         'qrCode': '$fullName',
         'relation': '$relation',
       }));
+  response;
+  print("api call check data");
+  print(response.statusCode);
+  if (response.statusCode == 200) {
+    print("objecsnisdsdnisdsdit");
+    print("${response.body}");
+    EasyLoading.dismiss();
+
+    // return jsonDecode(response.body);
+  }
+}
+
+Future createmember(qrCode, fullName, relation) async {
+  EasyLoading.show(status: 'loading...');
+
+  final response =
+      await http.post(Uri.parse('https://member-api.herokuapp.com/member/save'),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: jsonEncode({
+            'fullName': '$qrCode',
+            'qrCode': '$fullName',
+            'relation': '$relation',
+          }));
   response;
   print("api call check data");
   print(response.statusCode);

@@ -165,7 +165,7 @@ class _View_memberState extends State<View_member> {
                                                                         loading =
                                                                             true);
                                                                     overlay;
-                                                                    updateAlbum(
+                                                                    updatemember(
                                                                             "${snapshot.data[index].id}",
                                                                             qr.text,
                                                                             name.text,
@@ -216,32 +216,6 @@ class _View_memberState extends State<View_member> {
                                                             label: const Text(
                                                                 'SUBMIT'),
                                                           ),
-                                                          ElevatedButton.icon(
-                                                              onPressed: loading
-                                                                  ? null
-                                                                  : () {},
-                                                              style: ElevatedButton
-                                                                  .styleFrom(),
-                                                              icon: loading
-                                                                  ? Container(
-                                                                      width: 24,
-                                                                      height:
-                                                                          24,
-                                                                      padding:
-                                                                          const EdgeInsets.all(
-                                                                              2.0),
-                                                                      child:
-                                                                          const CircularProgressIndicator(
-                                                                        color: Colors
-                                                                            .white,
-                                                                        strokeWidth:
-                                                                            3,
-                                                                      ),
-                                                                    )
-                                                                  : const Icon(Icons
-                                                                      .feedback),
-                                                              label: Text(
-                                                                  "Update It")),
                                                         ],
                                                       )
                                                     ]);

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:web_services/screen/api.dart';
 import 'package:web_services/screen/home..dart';
 
 class Details extends StatefulWidget {
-  Details({Key? key}) : super(key: key);
+  final String? code;
+  Details({Key? key, @required this.code}) : super(key: key);
 
   @override
   State<Details> createState() => _DetailsState();
 }
+
+TextEditingController qr = TextEditingController();
+TextEditingController relation = TextEditingController();
+TextEditingController name = TextEditingController();
 
 class _DetailsState extends State<Details> {
   @override
@@ -59,6 +65,7 @@ class _DetailsState extends State<Details> {
                     Container(
                       padding: EdgeInsets.all(10),
                       child: TextField(
+                          controller: name,
                           cursorColor: Colors.green,
                           decoration: InputDecoration(
                             border: InputBorder.none,
@@ -68,10 +75,11 @@ class _DetailsState extends State<Details> {
                     Container(
                       padding: EdgeInsets.all(10),
                       child: TextField(
+                          controller: relation,
                           cursorColor: Colors.green,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            labelText: 'Relationship',
+                            labelText: 'Relationship ${widget.code}',
                           )),
                     ),
                     // Container(
@@ -97,6 +105,12 @@ class _DetailsState extends State<Details> {
                                     0.06) // put the width and height you want
                             ),
                         onPressed: () {
+                          createmember(widget.code, name.text, relation.text)
+                              .then((value) {});
+
+                          qr.clear();
+                          name.clear();
+                          relation.clear();
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(

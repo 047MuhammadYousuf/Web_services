@@ -89,7 +89,9 @@ class _QrScannerState extends State<QrScanner> {
       });
       if (barcode.code != null) {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Details()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => Details(code: barcode.code)));
       }
     });
   }
