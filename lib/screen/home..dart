@@ -197,28 +197,24 @@ class _HomeState extends State<Home> {
                               child: Text("View Members")),
                         ),
                       ]),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              MyHomePage()),
-                                      (Route<dynamic> route) =>
-                                          route is MyHomePage);
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    primary: Colors.green,
-                                    shape: new RoundedRectangleBorder(
-                                      borderRadius:
-                                          new BorderRadius.circular(25.0),
-                                    )),
-                                child: Text("Logout")),
-                          ),
-                        ],
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          MyHomePage()),
+                                  (Route<dynamic> route) =>
+                                      route is MyHomePage);
+                            },
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.green,
+                                shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(25.0),
+                                )),
+                            child: Text("Logout")),
                       )
                     ],
                   )
