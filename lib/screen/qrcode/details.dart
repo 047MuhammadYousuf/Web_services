@@ -79,7 +79,7 @@ class _DetailsState extends State<Details> {
                           cursorColor: Colors.green,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            labelText: 'Relationship ${widget.code}',
+                            labelText: 'Relationship',
                           )),
                     ),
                     // Container(

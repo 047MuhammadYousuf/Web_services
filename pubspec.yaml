@@ -40,10 +40,9 @@ dependencies:
   local_auth: ^1.1.11
   http: ^0.13.4
   flutter_easyloading: ^3.0.3
-  get: ^4.6.1
-  mac_address: ^1.0.0
-  device_info_plus: ^3.2.3
-  
+ 
+  get_mac: ^0.0.1
+
 
 dev_dependencies:
   flutter_test:

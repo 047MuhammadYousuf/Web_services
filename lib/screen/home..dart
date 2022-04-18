@@ -161,11 +161,11 @@ class _HomeState extends State<Home> {
                         Expanded(
                           child: ElevatedButton(
                               onPressed: () {
-                                // Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //         builder: (context) =>
-                                //             Setting_ForgetPassword()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            Setting_ForgetPassword()));
                                 // Navigator.push(
                                 //     context,
                                 //     MaterialPageRoute(
