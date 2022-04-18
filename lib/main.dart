@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:web_services/screen/landing.dart';
 import 'package:web_services/screen/lostmobile.dart';
 import 'package:web_services/screen/view_member.dart';
-import 'package:get/get.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
@@ -110,28 +109,5 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
-  }
-
-  static void showLoading([String? message]) {
-    Get.dialog(
-      Dialog(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 8),
-              Text(message ?? 'Loading...'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  //hide loading
-  static void hideLoading() {
-    if (Get.isDialogOpen!) Get.back();
   }
 }
