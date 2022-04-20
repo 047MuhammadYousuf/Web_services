@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:web_services/screen/api.dart';
+import 'package:web_services/api/api_deletemember.dart';
+import 'package:web_services/api/api_getmember.dart';
+import 'package:web_services/api/api_updatemember.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 

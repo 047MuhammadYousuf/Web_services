@@ -5,7 +5,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:web_services/controller.dart/local_auth_api.dart';
-import 'package:web_services/screen/custom_widgets.dart';
+import 'package:web_services/customwiget.dart/custom_widgets.dart';
 import 'package:web_services/screen/home..dart';
 
 TextEditingController username = TextEditingController();

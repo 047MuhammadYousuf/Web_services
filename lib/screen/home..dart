@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:web_services/main.dart';
 import 'package:web_services/screen/lostmobile.dart';
-import 'package:web_services/screen/mac-test.dart';
 import 'package:web_services/screen/qrcode/home_qr.dart';
 import 'package:web_services/screen/qrcode/qr_create.dart';
 import 'package:web_services/screen/qrcode/qr_scan.dart';
