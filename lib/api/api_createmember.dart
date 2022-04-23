@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:web_services/screen/qrcode/loader.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 Future createmember(qrCode, fullName, relation) async {

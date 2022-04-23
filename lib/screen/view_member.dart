@@ -42,9 +42,20 @@ class _View_memberState extends State<View_member> {
             FutureBuilder(
                 future: _futuremember,
                 builder: (context, AsyncSnapshot snapshot) {
-                  if (snapshot.data == null) {
-                    print("object  :null data  ${snapshot.data}");
+                  if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.data == null) {
+                    print("object  :null data  ${snapshot.data}");
+                    return Column(
+                      children: [
+                        SizedBox(height: 20),
+                        Center(
+                            child: Text(
+                          "No Data",
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        )),
+                      ],
+                    );
                   } else {
                     print("object  :has data  ${snapshot.data[0].relation}");
 

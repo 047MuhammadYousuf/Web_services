@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_services/screen/qrcode/widgets.dart';
+import 'package:web_services/customwiget.dart/widgets.dart';
 
 class Setting_ForgetPassword extends StatefulWidget {
   const Setting_ForgetPassword({Key? key}) : super(key: key);
